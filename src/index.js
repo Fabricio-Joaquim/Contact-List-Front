@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import Router from "./Router"
+import { Reset } from 'styled-reset'
+import { ThemeProvider } from "styled-components";
+import Global from "./style/global"
+import theme from "./style/theme"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <Reset />
+      <Global />
+      <Router />
+    </ThemeProvider>
   </React.StrictMode>
 );
 
