@@ -1,8 +1,14 @@
 import axios from 'axios';
 
-const api = axios.create({
-    baseURL: 'https://625f67b592df0bc0f3340282.mockapi.io/api/vi/',
+const service = axios.create({
+	baseURL: 'https://contact-back-end.herokuapp.com/',
+	headers: { 
+		'Content-Type': 'application/json',
+		'Access-Control-Allow-Origin': '*', 
+		'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+		'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
+	}
 });
 
 
-export default api;
+export default service;

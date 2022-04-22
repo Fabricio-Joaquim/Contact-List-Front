@@ -1,4 +1,4 @@
-import api from './index';
+/* import api from './index';
 
 
 const getContacts = async () => {
@@ -11,3 +11,4 @@ const getContacts = async () => {
 
 export { getContacts }
 
+ */

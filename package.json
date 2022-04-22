@@ -13,10 +13,14 @@
     "react-hook-form": "^7.30.0",
     "react-icons": "^4.3.1",
     "react-input-mask": "^2.0.4",
+    "react-query": "^3.37.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-toastify": "^8.2.0",
     "styled-components": "^5.3.5",
     "styled-reset": "^4.3.4",
+    "sweetalert2": "^11.4.9",
+    "sweetalert2-react-content": "^5.0.0",
     "web-vitals": "^2.1.0",
     "yup": "^0.32.11"
   },
@@ -45,6 +49,7 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.13.0"
+    "eslint": "^8.13.0",
+    "eslint-plugin-react": "^7.29.4"
   }
 }

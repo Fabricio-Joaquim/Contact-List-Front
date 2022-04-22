@@ -1,12 +1,12 @@
-import React from 'react'
-import * as Styled from "./style";
+import React from 'react';
+import * as Styled from './style';
 
 const Layer = ({ children }) => {
-    return (
-        <Styled.Global>
-            {children}
-        </Styled.Global>
-    )
-}
+	return (
+		<Styled.Global>
+			{children}
+		</Styled.Global>
+	);
+};
 
-export default Layer
+export default Layer;
