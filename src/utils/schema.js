@@ -14,7 +14,7 @@ export const schema = yup.object({
         .max(numberMMax, 'No máximo ' + numberMMax + ' caracteres  no campo ${path}')
         .required(),
     telefone: yup.string()
-        .matches(/^\([1-9]{2}\)9 (?:[1-9]|9[1-9])[0-9]{3}\-[0-9]{4}$/, "Campo de ${path} inválido")
+        .matches(/^\([1-9]{2}\)9 (?:[1-9]|9[1-9])[0-9]{3}-[0-9]{4}$/, "Campo de ${path} inválido")
         .required(),
     email: yup.string().email().required(),
     endereco: yup.string().required(),
