@@ -5,32 +5,36 @@ import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import useHook from '../../hooks';
 import { useGlobalContext } from '../../context';
 import Loading from '../../Components/Loading';
-import { ToastContainer, toast } from 'react-toastify';
 import {useAxios}  from '../../hooks/useFetch';
+import Toast from '../../Components/Toast';
 const Login = () => {
 	const { register, handleSubmit,  formState: { errors } } = useForm({});
 	const navigator = useHook();
-	const {setUser} = useGlobalContext();
-	const notify = () => toast('Falha de login', {
-		position: toast.POSITION.TOP_LEFT,
-		closeButton: true, type: toast.TYPE.ERROR
-	});
+	const { handlerUser} = useGlobalContext();
 
-	const { response, error, loading,fetchData } = useAxios();
-	console.log(response,'res');
+
+	const { response, error, loading,fetchData, resetError } = useAxios();
+	console.log(error,'res');
 	useEffect(() => {
-		!!error&&notify();
-		response?.token&&setUser(response);
-		response?.token&&navigator.navigateTo('/home');
+		if (response?.token) {
+			handlerUser(response);
+			navigator.navigateTo('/home');
+		}
+		if(error){
+			Toast({message:error.message,type:'ERROR'});
+			resetError();
+		}
 	}, [error,response]);
 		
 	const onSubmit = (data) => {
 		fetchData({
-			url: 'validate',
+			url: 'login',
 			method: 'POST',
 			data: data
 		});
 	};
+
+
 	const [seePassword, setSeePassword] = useState(true);
 	const togglePassword = () => setSeePassword(!seePassword);
 	const IconSeePassword = () => {
@@ -41,7 +45,6 @@ const Login = () => {
 	const handlerPassword = seePassword ? 'password' : 'text';
 	return (
 		<>
-			<ToastContainer />
 			<Styled.MainWarpper>
 				{loading?
 					<Loading/>:	

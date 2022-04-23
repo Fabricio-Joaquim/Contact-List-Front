@@ -5,6 +5,7 @@ const useAxios = () => {
 	const [response, setResponse] = useState(null);
 	const [error, setError] = useState('');
 	const [loading, setloading] = useState(false);
+	const resetError = () => setError('');
 	const fetchData = ({ url, method, data = null }) => {
 		setloading(true);
 		axios({
@@ -17,9 +18,13 @@ const useAxios = () => {
 	};
 
 	useEffect(() => {
+
+		return () => {
+
+		};
 	}, [response, error, loading]);
 
-	return { response, error, loading,fetchData };
+	return { response, error, loading,fetchData, resetError };
 };
 
 export {useAxios};

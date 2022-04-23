@@ -6,6 +6,8 @@ import { ThemeProvider } from 'styled-components';
 import Global from './style/global';
 import theme from './style/theme';
 import { ContextProvider } from './context';
+import {ToastContainer} from 'react-toastify';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
@@ -13,6 +15,7 @@ root.render(
 			<ContextProvider >
 				<Reset />
 				<Global />
+				<ToastContainer />
 				<Router />
 			</ContextProvider>
 		</ThemeProvider>
