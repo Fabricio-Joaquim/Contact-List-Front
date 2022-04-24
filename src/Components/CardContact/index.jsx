@@ -1,8 +1,9 @@
-import React, {memo} from 'react';
+import React from 'react';
 import * as Styled from './style';
-import {MdOutlineEdit, MdDeleteForever} from 'react-icons/md';
-const CardContact = ({ contact,handlerEdit,handlerDelete }) => {
+
+const CardContact = ({ contact }) => {
 	return (
+<<<<<<< HEAD
 		<>
 			<Styled.Container>
 				<div>
@@ -23,7 +24,23 @@ const CardContact = ({ contact,handlerEdit,handlerDelete }) => {
 				</div>
 			</Styled.Container>
 		</>
+=======
+		<Styled.Container>
+			<div>
+				<span>Nome</span>
+				{contact.nome}
+			</div>
+			<div>
+				<span>Sobrenome</span>
+				{contact.sobrenome}
+			</div>
+			<div>
+				<span>Telefone</span>
+				{contact.Telefone}
+			</div>
+		</Styled.Container>
+>>>>>>> parent of 83d909e... parte das integrações e toasts
 	);
 };
 
-export default memo(CardContact);
+export default CardContact;

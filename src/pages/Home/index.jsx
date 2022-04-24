@@ -1,14 +1,22 @@
+<<<<<<< HEAD
 import React, { useState, useEffect, useCallback } from 'react';
+=======
+import React, { useState, useEffect } from 'react';
+>>>>>>> parent of 83d909e... parte das integrações e toasts
 import { RiContactsBook2Fill } from 'react-icons/ri';
 import * as Styled from './style';
 import Loading from '../../Components/Loading';
 import CardContact from '../../Components/CardContact';
 import useHook from '../../hooks/';
 import NavBar from '../../Components/HomeBar';
+<<<<<<< HEAD
 import Toast from '../../Components/Toast';
 import axios from '../../services';
 import { useGlobalContext } from '../../context';
 import { useAxios } from '../../hooks/useFetch';
+=======
+
+>>>>>>> parent of 83d909e... parte das integrações e toasts
 const index = () => {
 	const {fetchData, response, error, loading, resetError} = useAxios();
 	const navigator = useHook();
@@ -16,6 +24,7 @@ const index = () => {
 	const handlerPage = () => navigator.navigateTo('/addContact');
 	const [contacts, setContacts] = useState([]);
 	useEffect(() => {
+<<<<<<< HEAD
 		axios.get('/contact').then(res => {
 			setContacts(res.data);
 		}).catch((error) => {
@@ -53,6 +62,13 @@ const index = () => {
 		}, [],
 	);
 
+=======
+		setContacts([]);
+		/*         getContacts().then(data => setContacts(data))
+ */    }, []);
+	const navigator = useHook();
+	const handlerPage = () => navigator.navigateTo('/addContact');
+>>>>>>> parent of 83d909e... parte das integrações e toasts
 	return (
 		<Styled.Container>
 			<NavBar>Lista de Contatos</NavBar>
@@ -63,6 +79,7 @@ const index = () => {
 					</div>
 				</Styled.SideHome>
 				<Styled.List>
+<<<<<<< HEAD
 					{ loading ? (<Loading />):
 						!contacts.length ? (<Styled.Empty>Nenhum contato encontrado</Styled.Empty>)
 						
@@ -76,6 +93,13 @@ const index = () => {
 									/>
 								))
 							)}
+=======
+					{!contacts.length ? (<Loading />) : (
+						contacts.map(contact => (
+							<CardContact key={contact.id} contact={contact} />
+						))
+					)}
+>>>>>>> parent of 83d909e... parte das integrações e toasts
 				</Styled.List>
 			</Styled.SubContainer>
 		</Styled.Container>

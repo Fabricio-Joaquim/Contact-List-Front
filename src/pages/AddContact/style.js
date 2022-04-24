@@ -9,15 +9,6 @@ export const MainWarpper = styled.div`
     //height: 100%;
     `;
 
-export const ContainerLoading = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    `;
-
 export const FormWarpper = styled.form`
   padding: 30px;
   min-width: 95%;
