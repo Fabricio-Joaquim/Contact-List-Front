@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Router from './Router';
+import Router from './Routers';
 import { Reset } from 'styled-reset';
 import { ThemeProvider } from 'styled-components';
 import Global from './style/global';
@@ -11,13 +11,13 @@ import {ToastContainer} from 'react-toastify';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
-		<ThemeProvider theme={theme}>
-			<ContextProvider >
+		<ContextProvider >
+			<ThemeProvider theme={theme}>
 				<Reset />
 				<Global />
 				<ToastContainer />
 				<Router />
-			</ContextProvider>
-		</ThemeProvider>
+			</ThemeProvider>
+		</ContextProvider>
 	</React.StrictMode>
 );

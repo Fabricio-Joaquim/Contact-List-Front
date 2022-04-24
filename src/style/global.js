@@ -14,7 +14,6 @@ export default createGlobalStyle`
         justify-content: center;
         align-items: center;
 
-
         button {
             background: #949494;
             background-image: -webkit-linear-gradient(top, #949494, #000000);
@@ -44,6 +43,7 @@ export default createGlobalStyle`
                 background-image: -o-linear-gradient(top, #1dfdba, #050300);
                 background-image: linear-gradient(to bottom, #1dfdba, #050300);
                 text-decoration: none;
+                cursor: pointer;
             }
         }
 

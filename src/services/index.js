@@ -1,7 +1,8 @@
+/* eslint-disable no-undef */
 import axios from 'axios';
 
 const service = axios.create({
-	baseURL: 'https://contact-back-end.herokuapp.com/',
+	baseURL: process.env.REACT_APP_BACKEND_URL,
 	headers: { 
 		'Content-Type': 'application/json',
 		'Access-Control-Allow-Origin': '*', 

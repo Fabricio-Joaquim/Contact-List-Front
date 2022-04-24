@@ -32,12 +32,18 @@ export const SideHome = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
-      cursor: pointer;
       :hover{
+        cursor: pointer;
         color: ${props => props.theme.colors.backgoround};
         background-color: ${props => props.theme.colors.secundary};
         padding: 5px;
         border-radius: 5px;
+      }
+      @media (max-width: 375px) {
+        margin-bottom: 10px;
+        :hover{
+        padding: 0px;
+        }
       }
     }
 `;
@@ -52,20 +58,28 @@ overflow-y: scroll;
 height: 400px;
 
 ::-webkit-scrollbar {
-  width: 12px;               /* width of the entire scrollbar */
+  width: 12px;               
 }
 
 ::-webkit-scrollbar-track {
-  background: #107555;        /* color of the tracking area */
+  background: #107555;       
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #18C490;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid #fff;  /* creates padding around scroll thumb */
+  background-color: #18C490;
+  border-radius: 20px;       
+  border: 3px solid #fff;
 }
 @media (max-width: 375px) {
   height: 350px;
     }
 
 `;
+
+export const Empty = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: ${props => props.theme.fontizes.small};
+    `;

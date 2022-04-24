@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+
     display: grid;
     margin: 10px 0;
     grid-template-columns: 1fr 1fr 1fr .5fr;
@@ -25,6 +26,7 @@ export const Container = styled.div`
         flex-direction: row;
         align-items: center;
         justify-content: space-evenly;
+        border:none;
         svg{
           cursor: pointer;
           border: 2px solid #677;
@@ -46,8 +48,9 @@ export const Container = styled.div`
     }
     @media (max-width: 375px) {
       border-bottom: #676767 solid 1px;
-      border-radius: 10px;
+      //border-radius: 10px;
       margin-bottom: 20px;
+      padding: 10px;
     }
   }
 @media (max-width: 375px) {

@@ -1,20 +1,28 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const FormWarpper = styled.form`
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
+
+    h2 {
+        margin-bottom: 20px;
+        font-size: ${props => props.theme.fontizes.large};
+        color: ${props => props.theme.colors.background};
+    }
+
     label{
         text-align: left;
         margin-top: 10px;
         margin-bottom: 6px;
     }
     input{
-        width: 200px;
+        width: 220px;
     }
     button{
-        width: 100px;
+        min-width: 100px;
         margin-top: 10px;
         align-self: center;
     }
@@ -39,4 +47,13 @@ export const Password = styled.div`
         align-self: center;  
         margin-left: 6px;
   }
+`;
+
+export const LinkWarpper = styled(Link)`
+    text-decoration: none;
+    color: ${props => props.theme.colors.secundary};
+    font-size: ${props => props.theme.fontizes.small};
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
 `;
