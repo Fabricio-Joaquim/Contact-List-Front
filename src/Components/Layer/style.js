@@ -5,6 +5,7 @@ min-height: 500px;
 width: 1000px;
 border-radius: 20px;
 padding: 20px;
+justify-content: center;
 display: flex;
 
 @media (max-width: 414px){

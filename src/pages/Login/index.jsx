@@ -5,9 +5,7 @@ import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import useHook from '../../hooks';
 import { useGlobalContext } from '../../context';
 import Loading from '../../Components/Loading';
-import { ToastContainer, toast } from 'react-toastify';
 import {useAxios}  from '../../hooks/useFetch';
-<<<<<<< HEAD
 import Toast from '../../Components/Toast';
 import { useLocation } from 'react-router-dom';
 import { schemaUserRegister } from '../../utils/schema';
@@ -26,31 +24,23 @@ const Login = () => {
 	const path = useLocation().pathname;
 	const { response, error, loading,fetchData, resetError } = useAxios();
 	useEffect(() => {
-		if (response?.id) {
-			setLocalStorage(response);
-			navigator.navigateTo('/home');
+		if(path ==='/register'){
+			Toast({
+				type: 'SUCCESS',
+				message: 'Cadastro realizado com sucesso'
+			});
+			navigator.navigateTo('/');
+		}
+		if (response?.token) {
+			if (path === '/' && response?.token) {
+				setLocalStorage(response);
+				navigator.navigateTo('/home');
+			}
 		}
 		if(error){
 			Toast({message:error?.data?.message,type:'ERROR'});
 			resetError();
 		}
-=======
-const Login = () => {
-	const { register, handleSubmit,  formState: { errors } } = useForm({});
-	const navigator = useHook();
-	const {setUser} = useGlobalContext();
-	const notify = () => toast('Falha de login', {
-		position: toast.POSITION.TOP_LEFT,
-		closeButton: true, type: toast.TYPE.ERROR
-	});
-
-	const { response, error, loading,fetchData } = useAxios();
-	console.log(response,'res');
-	useEffect(() => {
-		!!error&&notify();
-		response?.token&&setUser(response);
-		response?.token&&navigator.navigateTo('/home');
->>>>>>> parent of 83d909e... parte das integrações e toasts
 	}, [error,response]);
 	useEffect(() => {
 		if(localStorage?.id){
@@ -59,7 +49,6 @@ const Login = () => {
 	}, [localStorage]);
 
 	const onSubmit = (data) => {
-<<<<<<< HEAD
 		if (path=== '/') {
 			fetchData({
 				url: '/login',
@@ -75,14 +64,6 @@ const Login = () => {
 		}
 	};
 	const buttonTitle = useMemo(() =>  path === '/' ? 'Entrar' : 'Cadastrar', [path]);
-=======
-		fetchData({
-			url: 'validate',
-			method: 'POST',
-			data: data
-		});
-	};
->>>>>>> parent of 83d909e... parte das integrações e toasts
 	const [seePassword, setSeePassword] = useState(true);
 	const togglePassword = () => useCallback(setSeePassword(!seePassword)[seePassword],);
 	
@@ -103,7 +84,6 @@ const Login = () => {
 	, [buttonTitle,path]);
 	return (
 		<>
-			<ToastContainer />
 			<Styled.MainWarpper>
 				{loading?
 					<Loading/>:	

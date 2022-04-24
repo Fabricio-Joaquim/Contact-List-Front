@@ -15,7 +15,7 @@ const Input = ({ nameRegister, label, register, errors, ...rest }) => {
 		<Style.MainWarpper>
 			<label htmlFor={nameRegister}>{label}</label>
 			{type !== 'tel' ?
-				(<input type={type || 'text'}
+				(<input {...rest} type={type || 'text'}
 					max={type === 'date' ? myMaxDate : ''}
 					min={type === 'date' ? myMinDate : ''}
 					{...register(nameRegister, { required: 'obrigatorio' })} placeholder={`Escreva seu ${label.toLowerCase()}`} />) :
